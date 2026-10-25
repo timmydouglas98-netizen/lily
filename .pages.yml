@@ -1,0 +1,235 @@
+# Pages CMS configuration — defines the editing forms at app.pagescms.org.
+# Docs: https://pagescms.org/docs/
+
+media:
+  - name: images
+    label: Images
+    input: images
+    output: /images
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+  - name: video
+    label: Video
+    input: video
+    output: /video
+    rename: safe
+    extensions: [mp4]
+  - name: files
+    label: Files
+    input: files
+    output: /files
+    rename: safe
+    extensions: [pdf]
+
+content:
+  # ------------------------------------------------------------------ Projects
+  - name: works
+    label: Projects
+    type: file
+    path: content/works.json
+    format: json
+    list: true
+    description: "One entry per project, newest first. Drag to reorder — the order sets the index numbers."
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: year
+        label: Year
+        type: number
+        required: true
+      - name: discipline
+        label: Discipline
+        type: select
+        required: true
+        options:
+          values: [Styling, Art direction, Photography, Moving image]
+      - name: client
+        label: Client or publication
+        type: string
+        description: "Use “Self-initiated” for personal work."
+      - name: role
+        label: Your role
+        type: string
+        description: "e.g. Stylist, art director"
+      - name: featured
+        label: Show on the cover
+        type: boolean
+        description: "The first image of each featured project appears on the home page (up to six)."
+      - name: summary
+        label: Summary
+        type: text
+        description: "One short paragraph, first person. What you did, for whom, when."
+      - name: images
+        label: Images
+        type: object
+        description: "In the order they should appear. The first image also becomes the thumbnail."
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{alt}"
+        fields:
+          - name: image
+            label: Image
+            type: image
+            required: true
+            description: "Upload the largest JPG you have (around 3000px on the long side is plenty). The site makes the smaller sizes itself."
+            options:
+              media: images
+          - name: ratio
+            label: Shape
+            type: select
+            description: "Pick the closest. The site corrects it from the photo itself if it’s slightly off."
+            options:
+              values:
+                - name: "4:5"
+                  label: "4:5 portrait"
+                - name: "2:3"
+                  label: "2:3 portrait (35mm)"
+                - name: "5:7"
+                  label: "5:7 portrait"
+                - name: "3:4"
+                  label: "3:4 portrait"
+                - name: "1:1"
+                  label: "1:1 square"
+                - name: "4:3"
+                  label: "4:3 landscape"
+                - name: "3:2"
+                  label: "3:2 landscape (35mm)"
+                - name: "16:9"
+                  label: "16:9 landscape (film)"
+          - name: alt
+            label: Description for screen readers
+            type: string
+            required: true
+            description: "What is in the picture, plainly. e.g. “A woman in a grey wool coat against a white wall”."
+          - name: caption
+            label: Caption (optional)
+            type: string
+            description: "Leave blank in most cases. The first image is captioned automatically with Title, Client, Year."
+          - name: vimeo
+            label: Vimeo link (optional)
+            type: string
+            description: "For films. Paste the Vimeo URL; the image above becomes the poster frame."
+          - name: video
+            label: Video file (optional)
+            type: file
+            description: "Short MP4 under 50 MB. For anything longer, use a Vimeo link instead."
+            options:
+              media: video
+      - name: credits
+        label: Credits
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{role}: {name}"
+        fields:
+          - name: role
+            label: Role
+            type: string
+          - name: name
+            label: Name
+            type: string
+      - name: slug
+        label: Web address (optional)
+        type: string
+        description: "Leave blank — it’s made from the title. Only fill in to keep an old link working after renaming."
+        pattern: "^[a-z0-9-]*$"
+
+  # ------------------------------------------------------------- Site details
+  - name: site
+    label: Site details and Info page
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: pronouns
+        label: Pronouns
+        type: string
+      - name: city
+        label: City
+        type: string
+      - name: disciplines
+        label: Disciplines (shown under your name on the cover)
+        type: string
+        list: true
+      - name: description
+        label: Search engine description
+        type: text
+        description: "One sentence. Shown by Google and in link previews."
+      - name: email
+        label: Email
+        type: string
+      - name: instagram
+        label: Instagram handle
+        type: string
+      - name: instagram_url
+        label: Instagram link
+        type: string
+        description: "e.g. https://www.instagram.com/yourhandle"
+      - name: representation
+        label: Representation
+        type: string
+        description: "Agency and contact, or leave blank."
+      - name: bio
+        label: Short bio (about 90 words)
+        type: text
+      - name: bio_more
+        label: Longer bio (behind “Read more”)
+        type: text
+        description: "Leave a blank line between paragraphs."
+      - name: services
+        label: Services
+        type: string
+        list: true
+      - name: clients
+        label: Selected clients
+        type: string
+        list: true
+      - name: press
+        label: Press
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: note
+            label: Issue or detail
+            type: string
+          - name: year
+            label: Year
+            type: number
+      - name: show_available
+        label: Show “Available work”
+        type: boolean
+      - name: available
+        label: Available work
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: note
+            label: Details
+            type: string
+      - name: available_note
+        label: Line under available work
+        type: string
+      - name: cv
+        label: CV (PDF)
+        type: file
+        description: "Leave blank to show “CV on request”."
+        options:
+          media: files
+      - name: design_credit
+        label: Site design credit (footer)
+        type: string
