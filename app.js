@@ -35,10 +35,14 @@
   var vimeoId = function (u) { var m = String(u || "").match(/vimeo\.com\/(?:.*\/)?(\d{5,})/); return m ? m[1] : null; };
 
   /* ---------- content ---------- */
+  var ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+  var CATS = [], SUBS = [];
   function normalise(site, works) {
     S = site || {};
     S.name = S.name || "Untitled";
-    S.disciplines = S.disciplines || [];
+    S.full_name = S.full_name || S.name;
+    S.categories = S.categories || S.disciplines || [];
+    S.subcategories = S.subcategories || [];
     var used = {};
     W = (works || []).filter(function (w) { return w && w.title; }).map(function (w, i) {
       var slug = w.slug ? slugify(w.slug) : slugify(w.title);
@@ -49,10 +53,26 @@
       });
       if (!images.length) images = [{ image: "", ratio: "4:5", alt: w.title, caption: "" }];
       return {
-        no: i + 1, slug: slug, title: w.title, year: w.year || "", discipline: w.discipline || "",
+        order: i, slug: slug, title: w.title, year: w.year || "",
+        category: w.category || w.discipline || "", subcategory: w.subcategory || "",
         client: w.client || "", role: w.role || "", summary: w.summary || "", featured: !!w.featured,
         images: images, credits: (w.credits || []).filter(function (c) { return c && (c.role || c.name); })
       };
+    });
+
+    // Categories in the order set in Site details; any others follow in order of first use.
+    CATS = S.categories.slice();
+    W.forEach(function (w) { if (w.category && CATS.indexOf(w.category) < 0) CATS.push(w.category); });
+    SUBS = S.subcategories.slice();
+    W.forEach(function (w) { if (w.subcategory && SUBS.indexOf(w.subcategory) < 0) SUBS.push(w.subcategory); });
+    var ci = function (w) { var k = CATS.indexOf(w.category); return k < 0 ? 999 : k; };
+    var si = function (w) { var k = SUBS.indexOf(w.subcategory); return w.subcategory ? k : -1; };
+    W.sort(function (a, b) { return ci(a) - ci(b) || si(a) - si(b) || a.order - b.order; });
+    var usedCats = CATS.filter(function (c) { return W.some(function (w) { return w.category === c; }); });
+    W.forEach(function (w, i) {
+      w.no = i + 1;
+      var k = usedCats.indexOf(w.category);
+      w.sec = k > -1 ? (ROMAN[k] || String(k + 1)) : "";
     });
     ALL = [];
     W.forEach(function (w) { w.images.forEach(function (im, k) { ALL.push({ w: w, im: im, k: k }); }); });
@@ -159,41 +179,62 @@
     var span = yMin === yMax ? yMin : yMin + "–" + yMax;
     return '<section class="cover" aria-label="Cover">' +
       '<div class="cover-text"><div><h1 class="display">' + parts + "</h1>" +
-      '<div class="cover-sub meta"><span>' + S.disciplines.map(esc).join(" · ") + "</span><span>" + esc(S.city) + "</span></div></div>" +
-      '<p class="cover-foot meta">Work ' + span + " · " + W.length + " projects</p></div>" + plate +
+      '<div class="cover-sub meta"><span>' + CATS.map(function (c) { return '<a href="#' + slugify(c) + '">' + esc(c) + "</a>"; }).join(" · ") + "</span>" + (S.city ? "<span>" + esc(S.city) + "</span>" : "") + "</div></div>" +
+      '<p class="cover-foot meta">' + (span ? "Work " + span + " · " : "") + W.length + " projects</p></div>" + plate +
       "</section>" +
       (stream ? '<section class="stream wrap" aria-label="Selected work">' + stream + "</section>" : "");
   }
 
-  var filt = { d: "All", y: "All" };
-  function disciplinesUsed() {
-    var seen = W.map(function (w) { return w.discipline; }).filter(Boolean);
-    var order = S.disciplines.filter(function (d) { return seen.indexOf(d) > -1; });
-    seen.forEach(function (d) { if (order.indexOf(d) < 0) order.push(d); });
-    return order;
+  var filt = { c: "All", s: "All", y: "All" };
+  function catsUsed() { return CATS.filter(function (c) { return W.some(function (w) { return w.category === c; }); }); }
+  function subsOf(c) {
+    return SUBS.filter(function (s) { return W.some(function (w) { return w.category === c && w.subcategory === s; }); });
   }
+  function catBySlug(slug) { return CATS.filter(function (c) { return slugify(c) === slug; })[0]; }
+
   function vIndex() {
-    var ds = ["All"].concat(disciplinesUsed());
+    var cs = ["All"].concat(catsUsed());
     var ys = ["All"]; for (var y = yMax; y >= yMin; y--) if (years.indexOf(y) > -1) ys.push(String(y));
-    if (ds.indexOf(filt.d) < 0) filt.d = "All";
+    if (cs.indexOf(filt.c) < 0) filt.c = "All";
     if (ys.indexOf(filt.y) < 0) filt.y = "All";
     var btn = function (k, v) { return '<button type="button" data-f="' + k + '" data-v="' + esc(v) + '" aria-pressed="' + (filt[k] === v) + '">' + esc(v) + "</button>"; };
-    var rows = W.map(function (w) {
-      return '<li data-d="' + esc(w.discipline) + '" data-y="' + esc(w.year) + '"><a class="toc-row" href="#work-' + w.slug + '" data-i="' + (w.no - 1) + '">' +
+    var row = function (w) {
+      var note = w.client || w.role;
+      return '<li class="toc-item" data-c="' + esc(w.category) + '" data-s="' + esc(w.subcategory) + '" data-y="' + esc(w.year) + '"><a class="toc-row" href="#work-' + w.slug + '" data-i="' + (w.no - 1) + '">' +
         '<span class="mthumb">' + media(w.images[0], { still: true, decorative: true, sizes: "52px" }) + "</span>" +
         '<span class="n meta">' + pad(w.no) + "</span>" +
         '<span class="t">' + esc(w.title) + "</span>" +
-        '<span class="c">' + esc(w.client) + (w.discipline ? ' <span class="d meta muted">· ' + esc(w.discipline) + "</span>" : "") + "</span>" +
+        '<span class="c">' + esc(note) + "</span>" +
         '<span class="y meta">' + esc(w.year) + "</span></a></li>";
+    };
+    // One section per category; projects with a subcategory sit under a subheading.
+    var groups = catsUsed().concat(W.some(function (w) { return !w.category; }) ? [""] : []);
+    var sections = groups.map(function (c) {
+      var inCat = W.filter(function (w) { return w.category === c; });
+      var body = "", lastSub = null;
+      inCat.forEach(function (w) {
+        if (w.subcategory && w.subcategory !== lastSub) body += '<li class="toc-sub meta" data-s="' + esc(w.subcategory) + '">' + esc(w.subcategory) + "</li>";
+        lastSub = w.subcategory;
+        body += row(w);
+      });
+      var sec = inCat[0].sec;
+      return '<li class="toc-sec" data-c="' + esc(c) + '" id="sec-' + (c ? slugify(c) : "other") + '">' +
+        '<h2 class="sec-h"><span class="meta muted">' + esc(sec) + '</span><span>' + esc(c || "Other") + "</span></h2>" +
+        '<ol class="sec-list">' + body + "</ol></li>";
+    }).join("");
+    var subRows = catsUsed().filter(function (c) { return subsOf(c).length; }).map(function (c) {
+      return '<div class="filters meta subfilters" role="group" aria-label="Filter ' + esc(c) + '" data-for="' + esc(c) + '" hidden><span class="lbl">' + esc(c) + "</span>" +
+        ["All"].concat(subsOf(c)).map(function (s) { return btn("s", s); }).join("") + "</div>";
     }).join("");
     return '<section class="wrap"><header class="page-head grid12"><h1 class="title">Index</h1>' +
-      '<p class="aside meta">' + W.length + " projects" + (yMin ? ", " + (yMin === yMax ? yMin : yMin + "–" + yMax) : "") + "</p></header>" +
+      '<p class="aside meta">' + W.length + " projects in " + catsUsed().length + " parts" + (yMin ? ", " + (yMin === yMax ? yMin : yMin + "–" + yMax) : "") + "</p></header>" +
       '<div class="toc grid12">' +
-      '<div class="filters meta" role="group" aria-label="Filter by discipline"><span class="lbl">Discipline</span>' + ds.map(function (d) { return btn("d", d); }).join("") + "</div>" +
-      '<div class="filters meta" role="group" aria-label="Filter by year"><span class="lbl">Year</span>' + ys.map(function (y) { return btn("y", y); }).join("") + "</div>" +
+      '<div class="filters meta" role="group" aria-label="Filter by category"><span class="lbl">Category</span>' + cs.map(function (c) { return btn("c", c); }).join("") + "</div>" +
+      subRows +
+      (ys.length > 2 ? '<div class="filters meta" role="group" aria-label="Filter by year"><span class="lbl">Year</span>' + ys.map(function (y) { return btn("y", y); }).join("") + "</div>" : "") +
       '<div class="toc-thumb" aria-hidden="true"></div>' +
-      '<ol class="toc-list">' + rows + "</ol>" +
-      '<p class="toc-empty" hidden>Nothing in that year for this discipline.</p>' +
+      '<ol class="toc-list">' + sections + "</ol>" +
+      '<p class="toc-empty" hidden>Nothing matches those filters.</p>' +
       "</div></section>";
   }
 
@@ -214,7 +255,9 @@
       '<a href="#work-' + next.slug + '" rel="next"><span class="meta muted">Next · ' + pad(next.no) + '</span><span class="t">' + esc(next.title) + "</span></a></nav>" : "";
     return '<article class="work">' +
       '<header class="work-head wrap grid12"><div class="lead">' +
-      '<p class="meta muted" style="margin:0">No. ' + pad(w.no) + (w.discipline ? " · " + esc(w.discipline) : "") + "</p>" +
+      '<p class="meta muted work-kicker">No. ' + pad(w.no) +
+      (w.category ? ' · <a href="#' + slugify(w.category) + '">' + esc(w.sec + " " + w.category) + "</a>" : "") +
+      (w.subcategory ? " · " + esc(w.subcategory) : "") + "</p>" +
       '<h1 class="title">' + esc(w.title) + "</h1>" +
       (facts ? '<dl class="facts meta">' + facts + "</dl>" : "") + "</div>" +
       (w.summary ? '<div class="summary prose"><p>' + esc(w.summary) + "</p></div>" : "") + "</header>" +
@@ -251,13 +294,14 @@
     var more = String(S.bio_more || "").split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
     var email = S.email ? '<div class="contact-line"><a id="email-text" href="mailto:' + esc(S.email) + '">' + esc(S.email) + '</a><button type="button" class="copy-btn meta" data-copy="' + esc(S.email) + '">Copy</button></div>' : "";
     return '<section class="wrap"><header class="page-head grid12"><h1 class="title">Info</h1>' +
-      '<p class="aside meta">' + esc(S.name) + (S.pronouns ? " · " + esc(S.pronouns) : "") + "</p></header>" +
+      '<p class="aside meta">' + esc(S.full_name) + (S.pronouns ? " · " + esc(S.pronouns) : "") + "</p></header>" +
       '<div class="info-body grid12">' +
       '<div class="bio prose"><p class="first">' + esc(S.bio) + "</p>" +
       (more.length ? '<button type="button" class="more-btn meta" aria-expanded="false" aria-controls="bio-extra">Read more</button>' +
         '<div class="extra" id="bio-extra" hidden>' + more.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + "</div>" : "") + "</div>" +
       '<div class="facts-col">' +
-      '<section id="contact-block" tabindex="-1"><h2 class="meta">Contact</h2>' + email + ig +
+      '<section id="contact-block" tabindex="-1"><h2 class="meta">Contact</h2><div>' + esc(S.full_name) + "</div>" +
+      (email || ig || S.representation ? "" : '<div class="muted">Contact details to come</div>') + email + ig +
       (S.representation ? '<div class="muted">' + esc(S.representation) + "</div>" : "") + cv + "</section>" +
       ((S.services || []).length ? sec("Services", list(S.services)) : "") +
       ((S.clients || []).length ? sec("Selected clients", list(S.clients)) : "") +
@@ -281,6 +325,8 @@
       var w = W.filter(function (x) { return x.slug === h.slice(5); })[0];
       if (w) return { v: "work", w: w, t: w.title + " — " + S.name };
     }
+    var c = catBySlug(h);
+    if (c) return { v: "index", t: c + " — " + S.name, cat: c };
     return { v: "404", t: "Not found — " + S.name };
   }
   function html(r) {
@@ -294,7 +340,8 @@
 
   var current = null, timer = null;
   function render(first) {
-    var r = resolve(), key = r.v + (r.w ? r.w.slug : "");
+    var r = resolve(), key = r.v + (r.w ? r.w.slug : "") + (r.cat || "");
+    if (r.v === "index") { filt.c = r.cat || "All"; filt.s = "All"; filt.y = "All"; }
     if (current && current.key === key) { if (r.contact) focusContact(); return; }
     var swap = function () {
       view.innerHTML = html(r);
@@ -344,15 +391,29 @@
     var thumb = view.querySelector(".toc-thumb"), empty = view.querySelector(".toc-empty");
     function apply() {
       var shown = 0;
-      list.querySelectorAll("li").forEach(function (li) {
-        var ok = (filt.d === "All" || li.dataset.d === filt.d) && (filt.y === "All" || li.dataset.y === filt.y);
+      list.querySelectorAll(".toc-item").forEach(function (li) {
+        var ok = (filt.c === "All" || li.dataset.c === filt.c) &&
+          (filt.s === "All" || filt.c === "All" || li.dataset.s === filt.s) &&
+          (filt.y === "All" || li.dataset.y === filt.y);
         li.hidden = !ok; if (ok) shown++;
       });
+      // Hide subheadings and sections left with nothing under them.
+      list.querySelectorAll(".toc-sub").forEach(function (h) {
+        var n = h.nextElementSibling, any = false;
+        while (n && n.classList.contains("toc-item")) { if (!n.hidden) any = true; n = n.nextElementSibling; }
+        h.hidden = !any;
+      });
+      list.querySelectorAll(".toc-sec").forEach(function (s) { s.hidden = !s.querySelector(".toc-item:not([hidden])"); });
+      view.querySelectorAll(".subfilters").forEach(function (f) { f.hidden = f.dataset.for !== filt.c; });
       empty.hidden = shown > 0;
       view.querySelectorAll(".filters button").forEach(function (b) { b.setAttribute("aria-pressed", String(filt[b.dataset.f] === b.dataset.v)); });
     }
     view.querySelectorAll(".filters button").forEach(function (b) {
-      b.addEventListener("click", function () { filt[b.dataset.f] = b.dataset.v; apply(); });
+      b.addEventListener("click", function () {
+        filt[b.dataset.f] = b.dataset.v;
+        if (b.dataset.f === "c") filt.s = "All";
+        apply();
+      });
     });
     apply();
 
@@ -469,7 +530,7 @@
   function start(site, works) {
     normalise(site, works);
     document.querySelector(".mast-name").textContent = S.name;
-    document.querySelectorAll("[data-name]").forEach(function (n) { n.textContent = S.name; });
+    document.querySelectorAll("[data-name]").forEach(function (n) { n.textContent = S.full_name; });
     document.querySelector("[data-year]").textContent = new Date().getFullYear();
     document.querySelector("[data-credit]").textContent = S.design_credit || "";
     var desc = document.querySelector('meta[name="description"]');

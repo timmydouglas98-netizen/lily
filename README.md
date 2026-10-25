@@ -25,7 +25,8 @@ Static site, no framework and no build step. Content lives in JSON files edited 
 | Hash | Page |
 |---|---|
 | `#cover` (or none) | Cover and featured sequence |
-| `#index` | Contents list, filterable by discipline and year |
+| `#index` | Contents list grouped by category, filterable by category, subcategory and year |
+| `#<category>` | The Index filtered to one category, e.g. `#film-costuming` |
 | `#work-<slug>` | One project; slug is made from the title unless `slug` is set |
 | `#archive` | Contact sheet of every image, with lightbox |
 | `#info` / `#contact` | Bio and details |
@@ -39,7 +40,8 @@ Static site, no framework and no build step. Content lives in JSON files edited 
 {
   "title": "Lent",
   "year": 2025,
-  "discipline": "Styling",
+  "category": "Creative direction",
+  "subcategory": "Styling",
   "client": "Mara Editions",
   "role": "Stylist",
   "featured": true,
@@ -56,7 +58,8 @@ Static site, no framework and no build step. Content lives in JSON files edited 
 - `ratio` reserves space before the photo loads. If it doesn't match the photo, `app.js` corrects it from the file on load.
 - An image path that doesn't exist yet renders as a flat block at its ratio with the filename printed, never a broken-image icon. The sample projects rely on this.
 - The cover photo is the first upright image of the first `featured` project; the sequence beneath uses the first image of each featured project (max six).
-- Discipline options for the editor are in `.pages.yml`; the Index filters are built from the disciplines actually used.
+- Categories and subcategories: the editor's options are in `.pages.yml`; their order on the site comes from `categories` and `subcategories` in `site.json`. Projects are sorted by category, then subcategory, then their order in `works.json`, and numbered in that order. The Index shows one section per category (I, II, III…) with subcategory subheadings. Each category also has its own link, e.g. `#film-costuming`, which opens the Index filtered to it.
+- `name` is the short name used on the cover, header and page titles; `full_name` is used on the Info page, contact block and copyright line.
 
 ## Images
 

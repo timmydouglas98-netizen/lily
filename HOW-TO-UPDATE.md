@@ -9,7 +9,7 @@ Go to app.pagescms.org and sign in (with GitHub, or with the email invitation yo
 ## Add a project
 
 1. Open **Projects** and use the add button at the bottom of the list to add a new entry.
-2. Fill in the title, year, discipline, client and your role.
+2. Fill in the title, year, category (and subcategory for Creative direction), client and your role.
 3. Write the **summary**: one short paragraph in the first person. What you did, for whom, when, with whom. Leave out adjectives about the work.
 4. Under **Images**, add one entry for each photograph, in the order they should appear:
    - **Image:** upload the largest JPG you have. Around 3000px on the long side is plenty; keep files under about 10 MB. The site makes the smaller versions itself.
@@ -32,7 +32,7 @@ Films never play by themselves; visitors press play.
 
 ## Change the order
 
-In **Projects**, drag entries up or down. Newest goes first. The order sets the numbers in the Index (01, 02, 03…).
+In **Projects**, drag entries up or down. The site groups projects by category (Creative direction, Film costuming, Collage, Photography, Sculpture, Paintings); inside each category it keeps the order you set here. The Index numbers (01, 02, 03…) follow the grouped order.
 
 ## Choose what's on the home page
 
@@ -54,3 +54,11 @@ Open **Projects**, use the menu on the entry and delete it, then **Save**. Image
 - Name image files sensibly before uploading (`lent-01.jpg`, not `IMG_4821.jpg`). The names show up in the media library.
 - Export JPGs in sRGB so colours look the same in every browser.
 - If something looks wrong after saving, wait two minutes and refresh. If it still looks wrong, undo your last change and save again.
+
+## Categories
+
+The site is organised in six parts, in this order: Creative direction (with Commercial and Styling under it), Film costuming, Collage, Photography, Sculpture and Paintings. Each project belongs to one. A part with no projects in it doesn't appear on the site.
+
+Each part has its own link you can send people, for example `yoursite/#film-costuming` or `yoursite/#creative-direction`. It opens the Index showing just that part.
+
+Adding a new category or subcategory needs a small change to the editor settings, so ask whoever maintains the site.

@@ -29,7 +29,7 @@ content:
     path: content/works.json
     format: json
     list: true
-    description: "One entry per project, newest first. Drag to reorder — the order sets the index numbers."
+    description: "One entry per project. The site groups them by category; within a category, the order here is kept. Drag to reorder."
     fields:
       - name: title
         label: Title
@@ -38,17 +38,23 @@ content:
       - name: year
         label: Year
         type: number
-        required: true
-      - name: discipline
-        label: Discipline
+      - name: category
+        label: Category
         type: select
         required: true
+        description: "The part of the Index this project sits in. To add a new category, ask whoever maintains the site."
         options:
-          values: [Styling, Art direction, Photography, Moving image]
+          values: [Creative direction, Film costuming, Collage, Photography, Sculpture, Paintings]
+      - name: subcategory
+        label: Subcategory
+        type: select
+        description: "Only for Creative direction: Commercial or Styling. Leave blank for everything else."
+        options:
+          values: [Commercial, Styling]
       - name: client
         label: Client or publication
         type: string
-        description: "Use “Self-initiated” for personal work."
+        description: "Leave blank if there isn’t one, or for personal work."
       - name: role
         label: Your role
         type: string
@@ -147,17 +153,25 @@ content:
     format: json
     fields:
       - name: name
-        label: Name
+        label: Name on the cover and in the header
         type: string
         required: true
+      - name: full_name
+        label: Full name (Info page, contact and copyright)
+        type: string
       - name: pronouns
         label: Pronouns
         type: string
       - name: city
         label: City
         type: string
-      - name: disciplines
-        label: Disciplines (shown under your name on the cover)
+      - name: categories
+        label: Category order
+        type: string
+        list: true
+        description: "The order of the parts in the Index and under your name on the cover. Names must match the Category options exactly."
+      - name: subcategories
+        label: Subcategory order
         type: string
         list: true
       - name: description

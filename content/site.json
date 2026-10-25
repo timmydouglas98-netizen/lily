@@ -1,75 +1,38 @@
 {
-  "name": "Margot Lisle",
+  "name": "Lilybelle Lemonade",
+  "full_name": "Lilybelle Lemonade Eupene-Gordon",
   "pronouns": "she/her",
-  "city": "Paris",
-  "disciplines": [
-    "Styling",
-    "Art direction",
-    "Photography",
-    "Moving image"
-  ],
-  "email": "studio@margotlisle.com",
-  "instagram": "@margotlisle",
-  "instagram_url": "",
-  "representation": "Atelier Nord, Paris — agent@ateliernord.fr",
-  "bio": "I’m a stylist and artist based in Paris. I work across styling, art direction, photography and short film, mostly for independent labels, magazines and musicians. Most projects start with clothes: what someone wore, kept or was handed down. I shoot on medium format and Polaroid and I keep everything, from contact sheets to fitting notes, because the archive usually becomes the next project. Recent work includes the Studio Ferrand SS25 campaign, a portfolio for Mara Editions and a short film for No. 9 Journal.",
-  "bio_more": "I studied textile design, then spent six years assisting editorial stylists in Paris and Milan before working under my own name in 2019. The first job was a swimwear lookbook shot on a borrowed boat; the second was a catalogue for a homeware company that wanted the house to look lived in.\n\nSince then I’ve styled and art-directed campaigns, editorials and music videos, and I photograph my own series alongside commissioned work. Girls in the Orchard, a set of 48 Polaroids made over two summers in Normandy, was shown at Galerie Hesse in 2022.\n\nI usually work with the same small group: the photographer Jonas Weil, the set designer Inès Calvet and the hair stylist Ruth Ambler. For moving image I direct or co-direct with Lea Sorensen.",
-  "services": [
-    "Styling",
-    "Art direction",
+  "city": "",
+  "categories": [
     "Creative direction",
-    "Commissioned work"
+    "Film costuming",
+    "Collage",
+    "Photography",
+    "Sculpture",
+    "Paintings"
   ],
-  "clients": [
-    "Studio Ferrand",
-    "Mara Editions",
-    "No. 9 Journal",
-    "Atelier Rovel",
-    "Maison Lune",
-    "Ondine Swim",
-    "Celeste Amaro",
-    "Galerie Hesse",
-    "Revue Plein Air"
+  "subcategories": [
+    "Commercial",
+    "Styling"
   ],
-  "press": [
-    {
-      "title": "Interview, No. 9 Journal",
-      "note": "Issue 14",
-      "year": 2025
-    },
-    {
-      "title": "Portfolio, Mara Editions",
-      "note": "Issue 6",
-      "year": 2025
-    },
-    {
-      "title": "“Hothouse”, Revue Plein Air",
-      "note": "Spring issue",
-      "year": 2024
-    },
-    {
-      "title": "Girls in the Orchard, Galerie Hesse",
-      "note": "Exhibition",
-      "year": 2022
-    }
+  "description": "Lilybelle Lemonade is an artist working across creative direction, film costuming, collage, photography, sculpture and painting.",
+  "email": "",
+  "instagram": "",
+  "instagram_url": "",
+  "representation": "",
+  "bio": "I’m an artist and creative director. My work covers commercial creative direction and styling, costume for film, collage, photography, sculpture and painting. I costumed Thea Goes to Town (2021), Syb & the Myth (2022) and Dummy (2025).",
+  "bio_more": "",
+  "services": [
+    "Creative direction",
+    "Styling",
+    "Costume for film",
+    "Commissions"
   ],
-  "show_available": true,
-  "available": [
-    {
-      "title": "Hothouse",
-      "note": "Archival pigment prints, edition of 10, 50 × 40 cm"
-    },
-    {
-      "title": "Girls in the Orchard",
-      "note": "Unique Polaroids, framed"
-    },
-    {
-      "title": "Mother’s Wardrobe",
-      "note": "Artist book, 120 pages, edition of 200"
-    }
-  ],
+  "clients": [],
+  "press": [],
+  "show_available": false,
+  "available": [],
   "available_note": "Prices on enquiry",
   "cv": "",
-  "design_credit": "Site design by the artist with Claude",
-  "description": "Margot Lisle is a stylist and artist in Paris working across styling, art direction, photography and moving image."
+  "design_credit": ""
 }
