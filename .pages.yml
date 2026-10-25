@@ -42,15 +42,15 @@ content:
         label: Category
         type: select
         required: true
-        description: "The part of the Index this project sits in. To add a new category, ask whoever maintains the site."
+        description: "The part of the Index this project sits in."
         options:
-          values: [Creative direction, Film costuming, Collage, Photography, Sculpture, Paintings]
+          values: [Creative direction, Film costuming, Visual art]
       - name: subcategory
         label: Subcategory
         type: select
-        description: "Only for Creative direction: Commercial or Styling. Leave blank for everything else."
+        description: "Creative direction: Commercial or Styling. Visual art: Collage, Photography, Sculpture or Paintings. Leave blank for Film costuming."
         options:
-          values: [Commercial, Styling]
+          values: [Commercial, Styling, Collage, Photography, Sculpture, Paintings]
       - name: client
         label: Client or publication
         type: string

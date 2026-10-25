@@ -26,7 +26,7 @@ Static site, no framework and no build step. Content lives in JSON files edited 
 |---|---|
 | `#cover` (or none) | Cover and featured sequence |
 | `#index` | Contents list grouped by category, filterable by category, subcategory and year |
-| `#<category>` | The Index filtered to one category, e.g. `#film-costuming` |
+| `#<category>` / `#<subcategory>` | The Index filtered to one category or subcategory, e.g. `#visual-art`, `#collage` |
 | `#work-<slug>` | One project; slug is made from the title unless `slug` is set |
 | `#archive` | Contact sheet of every image, with lightbox |
 | `#info` / `#contact` | Bio and details |

@@ -9,7 +9,7 @@ Go to app.pagescms.org and sign in (with GitHub, or with the email invitation yo
 ## Add a project
 
 1. Open **Projects** and use the add button at the bottom of the list to add a new entry.
-2. Fill in the title, year, category (and subcategory for Creative direction), client and your role.
+2. Fill in the title, year, category and subcategory, client and your role. Creative direction projects are Commercial or Styling; Visual art projects are Collage, Photography, Sculpture or Paintings; films have no subcategory.
 3. Write the **summary**: one short paragraph in the first person. What you did, for whom, when, with whom. Leave out adjectives about the work.
 4. Under **Images**, add one entry for each photograph, in the order they should appear:
    - **Image:** upload the largest JPG you have. Around 3000px on the long side is plenty; keep files under about 10 MB. The site makes the smaller versions itself.
@@ -32,7 +32,7 @@ Films never play by themselves; visitors press play.
 
 ## Change the order
 
-In **Projects**, drag entries up or down. The site groups projects by category (Creative direction, Film costuming, Collage, Photography, Sculpture, Paintings); inside each category it keeps the order you set here. The Index numbers (01, 02, 03…) follow the grouped order.
+In **Projects**, drag entries up or down. The site groups projects by category and subcategory; inside each group it keeps the order you set here. The Index numbers (01, 02, 03…) follow the grouped order.
 
 ## Choose what's on the home page
 
@@ -57,8 +57,14 @@ Open **Projects**, use the menu on the entry and delete it, then **Save**. Image
 
 ## Categories
 
-The site is organised in six parts, in this order: Creative direction (with Commercial and Styling under it), Film costuming, Collage, Photography, Sculpture and Paintings. Each project belongs to one. A part with no projects in it doesn't appear on the site.
+The site is organised in three parts:
 
-Each part has its own link you can send people, for example `yoursite/#film-costuming` or `yoursite/#creative-direction`. It opens the Index showing just that part.
+- **I Creative direction:** Commercial, Styling
+- **II Film costuming:** one entry per film
+- **III Visual art:** Collage, Photography, Sculpture, Paintings
 
-Adding a new category or subcategory needs a small change to the editor settings, so ask whoever maintains the site.
+Each project has one category and, except for films, one subcategory. Each collage series, for example, is its own project with Category: Visual art and Subcategory: Collage. Parts and subheadings with nothing in them don't appear on the site.
+
+Every part and subcategory has its own link you can send people, for example `yoursite/#visual-art`, `yoursite/#collage` or `yoursite/#film-costuming`. It opens the Index showing just that part.
+
+Adding a new category or subcategory (say, Printmaking) needs a small change to the editor settings, so ask whoever maintains the site.

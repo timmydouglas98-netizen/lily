@@ -257,7 +257,7 @@
       '<header class="work-head wrap grid12"><div class="lead">' +
       '<p class="meta muted work-kicker">No. ' + pad(w.no) +
       (w.category ? ' · <a href="#' + slugify(w.category) + '">' + esc(w.sec + " " + w.category) + "</a>" : "") +
-      (w.subcategory ? " · " + esc(w.subcategory) : "") + "</p>" +
+      (w.subcategory ? ' · <a href="#' + slugify(w.subcategory) + '">' + esc(w.subcategory) + "</a>" : "") + "</p>" +
       '<h1 class="title">' + esc(w.title) + "</h1>" +
       (facts ? '<dl class="facts meta">' + facts + "</dl>" : "") + "</div>" +
       (w.summary ? '<div class="summary prose"><p>' + esc(w.summary) + "</p></div>" : "") + "</header>" +
@@ -327,6 +327,9 @@
     }
     var c = catBySlug(h);
     if (c) return { v: "index", t: c + " — " + S.name, cat: c };
+    // A subcategory link (e.g. #collage) opens its category filtered to it.
+    var sw = W.filter(function (x) { return x.subcategory && slugify(x.subcategory) === h; })[0];
+    if (sw) return { v: "index", t: sw.subcategory + " — " + S.name, cat: sw.category, sub: sw.subcategory };
     return { v: "404", t: "Not found — " + S.name };
   }
   function html(r) {
@@ -340,8 +343,8 @@
 
   var current = null, timer = null;
   function render(first) {
-    var r = resolve(), key = r.v + (r.w ? r.w.slug : "") + (r.cat || "");
-    if (r.v === "index") { filt.c = r.cat || "All"; filt.s = "All"; filt.y = "All"; }
+    var r = resolve(), key = r.v + (r.w ? r.w.slug : "") + (r.cat || "") + (r.sub || "");
+    if (r.v === "index") { filt.c = r.cat || "All"; filt.s = r.sub || "All"; filt.y = "All"; }
     if (current && current.key === key) { if (r.contact) focusContact(); return; }
     var swap = function () {
       view.innerHTML = html(r);

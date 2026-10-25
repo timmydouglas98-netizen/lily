@@ -180,8 +180,8 @@
     "credits": []
   },
   {
-    "title": "Collage series",
-    "category": "Collage",
+    "title": "Collage series one",
+    "category": "Visual art",
     "client": "",
     "role": "",
     "featured": true,
@@ -212,11 +212,12 @@
         "caption": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "subcategory": "Collage"
   },
   {
-    "title": "Photography",
-    "category": "Photography",
+    "title": "Photography series",
+    "category": "Visual art",
     "client": "",
     "role": "",
     "featured": false,
@@ -247,11 +248,12 @@
         "caption": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "subcategory": "Photography"
   },
   {
-    "title": "Sculpture",
-    "category": "Sculpture",
+    "title": "Sculpture series",
+    "category": "Visual art",
     "client": "",
     "role": "",
     "featured": false,
@@ -276,11 +278,12 @@
         "caption": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "subcategory": "Sculpture"
   },
   {
-    "title": "Paintings",
-    "category": "Paintings",
+    "title": "Painting series",
+    "category": "Visual art",
     "client": "",
     "role": "",
     "featured": false,
@@ -305,6 +308,7 @@
         "caption": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "subcategory": "Paintings"
   }
 ]
