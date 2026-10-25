@@ -1,6 +1,6 @@
 # Portfolio site — monograph edition
 
-Static site, no framework and no build step. Content lives in JSON files edited through Pages CMS; Netlify hosts it and resizes images.
+Static site, no framework and no build step. Content lives in JSON files edited through Sveltia CMS at `/admin` (config in `admin/config.yml`); Netlify hosts it and resizes images. A Pages CMS config (`.pages.yml`) is also kept and describes the same content.
 
 - **SETUP.md** — putting it online (GitHub → Netlify → Pages CMS)
 - **HOW-TO-UPDATE.md** — the artist's guide to editing content
@@ -15,7 +15,8 @@ Static site, no framework and no build step. Content lives in JSON files edited 
 | `content/works.json` | Projects, in display order | Pages CMS |
 | `content/site.json` | Name, bio, contact, clients, press, available work | Pages CMS |
 | `images/`, `video/`, `files/` | Uploaded media | Pages CMS |
-| `.pages.yml` | Defines the editing forms | Developer |
+| `admin/` | Sveltia CMS editor: `index.html` loads it, `config.yml` defines the forms | Developer |
+| `.pages.yml` | Pages CMS forms (alternative editor) | Developer |
 | `pages-cms-config-copy.txt` | Visible copy of `.pages.yml` for uploading through a browser | — |
 | `netlify.toml` | Hosting settings (no build, publish the root) | Developer |
 | `404.html` | Sends unknown paths to the site's own not-found page | — |
@@ -79,4 +80,4 @@ The page fetches its JSON, so it needs a server: `python3 -m http.server` in thi
 
 ## Changing the editor forms
 
-When adding a field: add it to `.pages.yml`, read it in `normalise()` in `app.js`, render it in the relevant view function. Existing content keeps working because every field has a fallback.
+When adding a field: add it to `admin/config.yml` (and `.pages.yml` if Pages CMS is still used), read it in `normalise()` in `app.js`, render it in the relevant view function. Existing content keeps working because every field has a fallback.

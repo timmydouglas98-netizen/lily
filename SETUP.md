@@ -36,7 +36,7 @@ Total time: about 30–45 minutes.
 
 From now on, every change saved to GitHub is published automatically.
 
-## 3. Connect the editor (Pages CMS)
+## 3. Connect the editor (Pages CMS — replaced, see 3b)
 
 1. Go to app.pagescms.org and sign in with GitHub.
 2. When asked, install the Pages CMS GitHub app and give it access to the `portfolio` repository only.
@@ -46,6 +46,23 @@ From now on, every change saved to GitHub is published automatically.
 ### Invite the artist
 
 Pages CMS can invite collaborators by email, so she doesn't need a GitHub account. Use the collaborators/sharing option for the repository in Pages CMS and send the invitation to her address. Give her `HOW-TO-UPDATE.md`.
+
+## 3b. The editor at /admin (Sveltia CMS)
+
+The site now has its own editor at `/admin` (e.g. `splendid-duckanoo-5ba3e1.netlify.app/admin`). It runs in the browser and saves straight to GitHub, with no third-party server. Its settings are in `admin/config.yml`.
+
+**Signing in as the repository owner:** use **Sign In Using Access Token** with a fine-grained GitHub token limited to `lily` with *Contents: Read and write* (steps in HOW-TO-UPDATE.md).
+
+**Letting Lilybelle sign in (one-time setup, about 10 minutes):**
+
+1. She makes a free GitHub account. In the `lily` repository: **Settings → Collaborators → Add people** → her username. She accepts the invite from her email.
+2. On github.com (your account): **Settings → Developer settings → OAuth Apps → New OAuth App**.
+   - Application name: `Lilybelle site editor`
+   - Homepage URL: the Netlify site address
+   - Authorization callback URL: `https://api.netlify.com/auth/done`
+   - Register, then **Generate a new client secret**. Keep the page open.
+3. In Netlify: open the site → **Project configuration → Security → OAuth** (called "Access control → OAuth" on some accounts) → **Install provider** → **GitHub**, and paste the Client ID and Client secret from step 2.
+4. She goes to `/admin` and clicks **Sign In with GitHub**.
 
 ## 4. Replace the placeholder content
 

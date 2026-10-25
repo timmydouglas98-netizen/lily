@@ -1,14 +1,16 @@
 # How to update the site
 
-You edit the site at **app.pagescms.org**. Everything you save goes live on its own within a minute or two. You can't break the design from here; the worst that can happen is a typo, and you can fix it the same way.
+You edit the site at **your site's address + `/admin`**, for example `splendid-duckanoo-5ba3e1.netlify.app/admin`. Everything you save goes live on its own within a minute or two. You can't break the design from here; the worst that can happen is a typo, and you can fix it the same way.
 
 ## Sign in
 
-Go to app.pagescms.org and sign in (with GitHub, or with the email invitation you were sent). Open the site. On the left you'll see **Projects**, **Site details and Info page**, and **Images**.
+1. Go to the `/admin` address.
+2. Click **Sign In with GitHub** and approve the prompt. (The site owner can also use **Sign In Using Access Token**; see the bottom of this guide.) The browser remembers you, so you only do this once per computer.
+3. On the left you'll see **Projects** and **Site details**. Uploaded images are under **Assets**.
 
 ## Add a project
 
-1. Open **Projects** and use the add button at the bottom of the list to add a new entry.
+1. Open **Projects → All projects**. Each project is a collapsed row; click one to open it, or use **Add Project** at the bottom for a new one.
 2. Fill in the title, year, category and subcategory, client and your role. Creative direction projects are Commercial or Styling; Visual art projects are Collage, Photography, Sculpture or Paintings; films have no subcategory.
 3. Write the **summary**: one short paragraph in the first person. What you did, for whom, when, with whom. Leave out adjectives about the work.
 4. Under **Images**, add one entry for each photograph, in the order they should appear:
@@ -18,7 +20,7 @@ Go to app.pagescms.org and sign in (with GitHub, or with the email invitation yo
    - **Caption:** usually leave it blank. The first image is captioned automatically as *Title, Client, Year*.
 5. Add **Credits**: one line per person (role, then name).
 6. Tick **Show on the cover** if this project should appear on the home page.
-7. Click **Save**.
+7. Click **Save** at the top.
 
 The first image becomes the project's thumbnail in the Index and the Archive.
 
@@ -43,11 +45,11 @@ To change the big photograph, drag a different ticked project to the top, or unt
 
 ## Edit your bio, contact details, clients and press
 
-Open **Site details and Info page**. In the longer bio, leave a blank line between paragraphs. To add your CV, upload a PDF in the **CV** field; until then the site says "CV on request".
+Open **Site details**. In the longer bio, leave a blank line between paragraphs. To add your CV, upload a PDF in the **CV** field; until then the site says "CV on request".
 
 ## Remove a project
 
-Open **Projects**, use the menu on the entry and delete it, then **Save**. Images you uploaded stay in **Images** until you delete them there too.
+Open **Projects → All projects**, use the delete button on that project's row, then **Save**. Images you uploaded stay under **Assets** until you delete them there too.
 
 ## Good habits
 
@@ -68,3 +70,15 @@ Each project has one category and, except for films, one subcategory. Each colla
 Every part and subcategory has its own link you can send people, for example `yoursite/#visual-art`, `yoursite/#collage` or `yoursite/#film-costuming`. It opens the Index showing just that part.
 
 Adding a new category or subcategory (say, Printmaking) needs a small change to the editor settings, so ask whoever maintains the site.
+
+## Getting an access key (site owner only)
+
+If **Sign In with GitHub** isn't set up yet, the owner of the `lily` repository can sign in with a key instead. This only works for the account that owns the repository; collaborators need **Sign In with GitHub**.
+
+1. On github.com: profile picture → **Settings** → **Developer settings** (bottom of the left sidebar) → **Personal access tokens** → **Fine-grained tokens** → **Generate new token**.
+2. Name it "Site editor" and set an expiry (a year is fine; you'll need a new key after that).
+3. **Repository access:** *Only select repositories* → `lily`.
+4. **Permissions → Repository permissions → Contents:** *Read and write*.
+5. **Generate token**, copy it, and paste it into **Sign In Using Access Token** on the `/admin` page.
+
+Treat the key like a password: don't email it or post it anywhere. If it ever leaks, delete it on the same GitHub page and make a new one.

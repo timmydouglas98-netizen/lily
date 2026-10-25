@@ -1,0 +1,214 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+# Sveltia CMS — the site editor at /admin. Docs: https://sveltiacms.app/en/docs
+
+backend:
+  name: github
+  repo: timmydouglas98-netizen/lily
+  branch: main
+  commit_messages:
+    create: "Add {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
+
+media_folder: images
+public_folder: /images
+
+site_url: https://splendid-duckanoo-5ba3e1.netlify.app
+display_url: https://splendid-duckanoo-5ba3e1.netlify.app
+
+collections:
+  # ------------------------------------------------------------------ Projects
+  - name: projects
+    label: Projects
+    description: "One entry per project. The site groups them by category and subcategory; within each group the order here is kept. Drag to reorder."
+    files:
+      - name: works
+        label: All projects
+        file: content/works.json
+        format: json
+        fields:
+          - name: works
+            label: Projects
+            label_singular: Project
+            widget: list
+            root: true
+            collapsed: true
+            summary: "{{title}} · {{category}} {{subcategory}}"
+            fields:
+              - name: title
+                label: Title
+                widget: string
+              - name: year
+                label: Year
+                widget: number
+                value_type: int
+                required: false
+              - name: category
+                label: Category
+                widget: select
+                options: [Creative direction, Film costuming, Visual art]
+              - name: subcategory
+                label: Subcategory
+                widget: select
+                required: false
+                hint: "Creative direction: Commercial or Styling. Visual art: Collage, Photography, Sculpture or Paintings. Leave blank for Film costuming."
+                options: [Commercial, Styling, Collage, Photography, Sculpture, Paintings]
+              - name: client
+                label: Client or publication
+                widget: string
+                required: false
+                hint: "Leave blank if there isn’t one, or for personal work."
+              - name: role
+                label: Your role
+                widget: string
+                required: false
+                hint: "e.g. Stylist, creative director, costume designer"
+              - name: featured
+                label: Show on the cover
+                widget: boolean
+                required: false
+                default: false
+                hint: "The first image of each featured project appears on the home page (up to six)."
+              - name: summary
+                label: Summary
+                widget: text
+                required: false
+                hint: "One short paragraph, first person. What you did, for whom, when."
+              - name: images
+                label: Images
+                label_singular: Image
+                widget: list
+                collapsed: true
+                summary: "{{alt}}"
+                min: 1
+                hint: "In the order they should appear. The first image is also the thumbnail."
+                fields:
+                  - name: image
+                    label: Image
+                    widget: image
+                    hint: "Upload the largest JPG you have (around 3000px on the long side, under 10 MB). The site makes smaller sizes itself."
+                  - name: ratio
+                    label: Shape
+                    widget: select
+                    default: "4:5"
+                    hint: "Pick the closest. The site corrects it from the photo if it’s slightly off."
+                    options:
+                      - { label: "4:5 portrait", value: "4:5" }
+                      - { label: "2:3 portrait (35mm)", value: "2:3" }
+                      - { label: "5:7 portrait", value: "5:7" }
+                      - { label: "3:4 portrait", value: "3:4" }
+                      - { label: "1:1 square", value: "1:1" }
+                      - { label: "4:3 landscape", value: "4:3" }
+                      - { label: "3:2 landscape (35mm)", value: "3:2" }
+                      - { label: "16:9 landscape (film)", value: "16:9" }
+                  - name: alt
+                    label: Description for screen readers
+                    widget: string
+                    hint: "What is in the picture, plainly. e.g. “A woman in a grey wool coat against a white wall”."
+                  - name: caption
+                    label: Caption (optional)
+                    widget: string
+                    required: false
+                    hint: "Usually blank. The first image is captioned automatically with Title, Client, Year."
+                  - name: vimeo
+                    label: Vimeo link (optional)
+                    widget: string
+                    required: false
+                    hint: "For films. Paste the Vimeo URL; the image above becomes the poster frame."
+                  - name: video
+                    label: Video file (optional)
+                    widget: file
+                    required: false
+                    media_folder: /video
+                    public_folder: /video
+                    hint: "Short MP4 under 50 MB. For anything longer, use a Vimeo link instead."
+              - name: credits
+                label: Credits
+                label_singular: Credit
+                widget: list
+                required: false
+                collapsed: true
+                summary: "{{role}}: {{name}}"
+                fields:
+                  - { name: role, label: Role, widget: string, required: false }
+                  - { name: name, label: Name, widget: string, required: false }
+              - name: slug
+                label: Web address (optional)
+                widget: string
+                required: false
+                pattern: ["^[a-z0-9-]*$", "Lowercase letters, numbers and dashes only"]
+                hint: "Leave blank — it’s made from the title. Only fill in to keep an old link working after renaming."
+
+  # ------------------------------------------------------------- Site details
+  - name: settings
+    label: Site details
+    files:
+      - name: site
+        label: Site details and Info page
+        file: content/site.json
+        format: json
+        fields:
+          - { name: name, label: Name on the cover and in the header, widget: string }
+          - { name: full_name, label: "Full name (Info page, contact and copyright)", widget: string, required: false }
+          - { name: pronouns, label: Pronouns, widget: string, required: false }
+          - { name: city, label: City, widget: string, required: false }
+          - name: categories
+            label: Category order
+            widget: list
+            field: { name: category, label: Category, widget: string }
+            hint: "The order of the parts in the Index and under the name on the cover. Must match the Category options exactly."
+          - name: subcategories
+            label: Subcategory order
+            widget: list
+            required: false
+            field: { name: subcategory, label: Subcategory, widget: string }
+          - { name: description, label: Search engine description, widget: text, required: false, hint: "One sentence. Shown by Google and in link previews." }
+          - { name: email, label: Email, widget: string, required: false }
+          - { name: instagram, label: Instagram handle, widget: string, required: false }
+          - { name: instagram_url, label: Instagram link, widget: string, required: false, hint: "e.g. https://www.instagram.com/yourhandle" }
+          - { name: representation, label: Representation, widget: string, required: false, hint: "Agency and contact, or leave blank." }
+          - { name: bio, label: Short bio (about 90 words), widget: text, required: false }
+          - { name: bio_more, label: "Longer bio (behind “Read more”)", widget: text, required: false, hint: "Leave a blank line between paragraphs." }
+          - name: services
+            label: Services
+            widget: list
+            required: false
+            field: { name: service, label: Service, widget: string }
+          - name: clients
+            label: Selected clients
+            widget: list
+            required: false
+            field: { name: client, label: Client, widget: string }
+          - name: press
+            label: Press
+            label_singular: Press item
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{title}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: note, label: Issue or detail, widget: string, required: false }
+              - { name: year, label: Year, widget: number, value_type: int, required: false }
+          - { name: show_available, label: "Show “Available work”", widget: boolean, required: false, default: false }
+          - name: available
+            label: Available work
+            label_singular: Work
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{title}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: note, label: Details, widget: string, required: false }
+          - { name: available_note, label: Line under available work, widget: string, required: false }
+          - name: cv
+            label: CV (PDF)
+            widget: file
+            required: false
+            media_folder: /files
+            public_folder: /files
+            hint: "Leave blank to show “CV on request”."
+          - { name: design_credit, label: Site design credit (footer), widget: string, required: false }
