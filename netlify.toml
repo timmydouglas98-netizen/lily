@@ -1,0 +1,9 @@
+# No build step: Netlify publishes the files as they are.
+[build]
+  publish = "."
+
+# Content changes should show straight away.
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

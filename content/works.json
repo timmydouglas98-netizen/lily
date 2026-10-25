@@ -1,0 +1,546 @@
+[
+  {
+    "title": "Small Hours",
+    "year": 2025,
+    "discipline": "Moving image",
+    "client": "No. 9 Journal",
+    "role": "Director, stylist",
+    "featured": true,
+    "summary": "A three-minute film for No. 9 Journal’s night issue. Two sisters get ready for a party that never starts. We shot it in one flat over two nights, mostly by the light of a fridge and a bathroom mirror.",
+    "images": [
+      {
+        "image": "/images/small-hours-poster.jpg",
+        "ratio": "16:9",
+        "alt": "Film still: two women at a kitchen table at night, lit by an open fridge",
+        "caption": "",
+        "video": "/video/small-hours-film.mp4"
+      },
+      {
+        "image": "/images/small-hours-01.jpg",
+        "ratio": "4:5",
+        "alt": "A woman in a satin slip sitting on the edge of a bath, holding earrings",
+        "caption": "Fitting, second night"
+      },
+      {
+        "image": "/images/small-hours-02.jpg",
+        "ratio": "3:2",
+        "alt": "A hallway mirror with two blurred figures passing",
+        "caption": ""
+      },
+      {
+        "image": "/images/small-hours-03.jpg",
+        "ratio": "1:1",
+        "alt": "A pile of borrowed dresses on an unmade bed",
+        "caption": ""
+      },
+      {
+        "image": "/images/small-hours-04.jpg",
+        "ratio": "4:5",
+        "alt": "Close portrait of a woman with mascara running, looking at the camera",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Direction and styling",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Co-direction",
+        "name": "Lea Sorensen"
+      },
+      {
+        "role": "Cinematography",
+        "name": "Jonas Weil"
+      },
+      {
+        "role": "Hair",
+        "name": "Ruth Ambler"
+      },
+      {
+        "role": "Cast",
+        "name": "Clara and Agnès Bonnet"
+      }
+    ]
+  },
+  {
+    "title": "Lent",
+    "year": 2025,
+    "discipline": "Styling",
+    "client": "Mara Editions",
+    "role": "Stylist",
+    "featured": true,
+    "summary": "Twelve pages for Mara Editions, issue 6. Everything is borrowed: from friends, from my mother, from a parish jumble sale. I wrote each lender’s name on a tag and left the tags in the shot.",
+    "images": [
+      {
+        "image": "/images/lent-01.jpg",
+        "ratio": "4:5",
+        "alt": "A woman in an oversized grey wool coat standing against a white wall, a paper tag hanging from the sleeve",
+        "caption": ""
+      },
+      {
+        "image": "/images/lent-02.jpg",
+        "ratio": "3:2",
+        "alt": "Two women seated on church chairs, one in a lace collar, one in a cardigan buttoned wrong",
+        "caption": "Collar lent by Odette Lisle"
+      },
+      {
+        "image": "/images/lent-03.jpg",
+        "ratio": "5:7",
+        "alt": "Detail of hands holding a folded handkerchief over a pleated skirt",
+        "caption": ""
+      },
+      {
+        "image": "/images/lent-04.jpg",
+        "ratio": "4:5",
+        "alt": "A woman lying on a parquet floor in a velvet dress, eyes closed",
+        "caption": ""
+      },
+      {
+        "image": "/images/lent-05.jpg",
+        "ratio": "16:9",
+        "alt": "A clothes rail in an empty hall with handwritten tags on every hanger",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Styling",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Photography",
+        "name": "Jonas Weil"
+      },
+      {
+        "role": "Hair and make-up",
+        "name": "Ruth Ambler"
+      },
+      {
+        "role": "Model",
+        "name": "Anouk Peyre"
+      }
+    ]
+  },
+  {
+    "title": "The Long Lunch",
+    "year": 2024,
+    "discipline": "Art direction",
+    "client": "Studio Ferrand",
+    "role": "Art director, stylist",
+    "featured": true,
+    "summary": "The SS25 campaign for Studio Ferrand. I cast the founder’s family and friends and set a lunch in their garden in the Drôme that ran from noon until the light went. Jonas photographed whoever was still at the table.",
+    "images": [
+      {
+        "image": "/images/the-long-lunch-01.jpg",
+        "ratio": "16:9",
+        "alt": "A long table under plane trees, half-finished plates and twelve people in linen",
+        "caption": ""
+      },
+      {
+        "image": "/images/the-long-lunch-02.jpg",
+        "ratio": "4:5",
+        "alt": "An older man in a cream shirt laughing, holding a peach",
+        "caption": ""
+      },
+      {
+        "image": "/images/the-long-lunch-03.jpg",
+        "ratio": "3:2",
+        "alt": "A child asleep across two chairs under a striped jacket",
+        "caption": "Four in the afternoon"
+      },
+      {
+        "image": "/images/the-long-lunch-04.jpg",
+        "ratio": "1:1",
+        "alt": "Wine glasses and a crumpled napkin on a white tablecloth",
+        "caption": ""
+      },
+      {
+        "image": "/images/the-long-lunch-05.jpg",
+        "ratio": "4:5",
+        "alt": "A woman in a pale yellow dress walking away down a gravel path",
+        "caption": ""
+      },
+      {
+        "image": "/images/the-long-lunch-06.jpg",
+        "ratio": "3:2",
+        "alt": "The empty table at dusk with chairs pushed back",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Art direction and styling",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Photography",
+        "name": "Jonas Weil"
+      },
+      {
+        "role": "Set design",
+        "name": "Inès Calvet"
+      },
+      {
+        "role": "Production",
+        "name": "Studio Ferrand"
+      }
+    ]
+  },
+  {
+    "title": "Hothouse",
+    "year": 2024,
+    "discipline": "Photography",
+    "client": "Self-initiated",
+    "role": "Photographer",
+    "featured": true,
+    "summary": "Photographs made in a municipal glasshouse during the winter it closed for repairs. I went in once a week from November to March. Some of these were published in Revue Plein Air; the prints are available as an edition of ten.",
+    "images": [
+      {
+        "image": "/images/hothouse-01.jpg",
+        "ratio": "5:7",
+        "alt": "Fogged glass with the shape of a palm frond pressed against it",
+        "caption": ""
+      },
+      {
+        "image": "/images/hothouse-02.jpg",
+        "ratio": "3:2",
+        "alt": "Rows of potted orchids under plastic sheeting",
+        "caption": ""
+      },
+      {
+        "image": "/images/hothouse-03.jpg",
+        "ratio": "4:5",
+        "alt": "A gardener’s green apron hanging on a rusted hook",
+        "caption": ""
+      },
+      {
+        "image": "/images/hothouse-04.jpg",
+        "ratio": "1:1",
+        "alt": "Condensation running down a pane above a fern",
+        "caption": ""
+      },
+      {
+        "image": "/images/hothouse-05.jpg",
+        "ratio": "5:7",
+        "alt": "Pale winter light through broken panes onto an empty walkway",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Photography",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Printing",
+        "name": "Atelier Fresson-Ruiz"
+      }
+    ]
+  },
+  {
+    "title": "Pale Fire",
+    "year": 2023,
+    "discipline": "Moving image",
+    "client": "Celeste Amaro",
+    "role": "Stylist, art director",
+    "featured": false,
+    "summary": "Music video for Celeste Amaro’s single. One take in a closed ballroom, a red dress that loses a layer every verse. I built the dress in four pieces with the costume maker Hélène Vasseur so it could come apart on cue.",
+    "images": [
+      {
+        "image": "/images/pale-fire-poster.jpg",
+        "ratio": "16:9",
+        "alt": "Film still: a woman in a red dress alone on a ballroom floor",
+        "caption": "",
+        "video": "/video/pale-fire-film.mp4"
+      },
+      {
+        "image": "/images/pale-fire-01.jpg",
+        "ratio": "4:5",
+        "alt": "The red dress on a dress form with four detachable panels laid beside it",
+        "caption": "The dress in four parts"
+      },
+      {
+        "image": "/images/pale-fire-02.jpg",
+        "ratio": "3:2",
+        "alt": "Celeste Amaro mid-turn under a chandelier, skirt blurred",
+        "caption": ""
+      },
+      {
+        "image": "/images/pale-fire-03.jpg",
+        "ratio": "1:1",
+        "alt": "A swatch card of red silks pinned with notes",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Artist",
+        "name": "Celeste Amaro"
+      },
+      {
+        "role": "Styling and art direction",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Direction",
+        "name": "Lea Sorensen"
+      },
+      {
+        "role": "Costume",
+        "name": "Hélène Vasseur"
+      }
+    ]
+  },
+  {
+    "title": "Sunday Best",
+    "year": 2023,
+    "discipline": "Styling",
+    "client": "Atelier Rovel",
+    "role": "Stylist",
+    "featured": true,
+    "summary": "Lookbook for Atelier Rovel’s autumn collection. The brief was church clothes worn on a Monday, so we shot in a laundrette and a bus shelter in Saint-Ouen.",
+    "images": [
+      {
+        "image": "/images/sunday-best-01.jpg",
+        "ratio": "4:5",
+        "alt": "A woman in a navy pleated dress and white socks sitting on a laundrette bench",
+        "caption": ""
+      },
+      {
+        "image": "/images/sunday-best-02.jpg",
+        "ratio": "5:7",
+        "alt": "A man in a three-piece suit holding a carrier bag in a bus shelter",
+        "caption": ""
+      },
+      {
+        "image": "/images/sunday-best-03.jpg",
+        "ratio": "3:2",
+        "alt": "Two figures folding a white tablecloth between them",
+        "caption": ""
+      },
+      {
+        "image": "/images/sunday-best-04.jpg",
+        "ratio": "4:5",
+        "alt": "Detail of a patent shoe and a laddered stocking",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Styling",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Photography",
+        "name": "Jonas Weil"
+      },
+      {
+        "role": "Models",
+        "name": "Ines Mora, Theo Laurent"
+      }
+    ]
+  },
+  {
+    "title": "Girls in the Orchard",
+    "year": 2022,
+    "discipline": "Photography",
+    "client": "Galerie Hesse",
+    "role": "Photographer",
+    "featured": true,
+    "summary": "Forty-eight Polaroids made over two summers at my aunt’s farm in Normandy, of my cousins and their friends. Shown at Galerie Hesse in 2022, hung in a single line at hip height.",
+    "images": [
+      {
+        "image": "/images/girls-in-the-orchard-01.jpg",
+        "ratio": "1:1",
+        "alt": "Polaroid of a girl in a cotton nightdress standing between apple trees",
+        "caption": ""
+      },
+      {
+        "image": "/images/girls-in-the-orchard-02.jpg",
+        "ratio": "1:1",
+        "alt": "Polaroid of three girls lying in long grass, faces turned away",
+        "caption": ""
+      },
+      {
+        "image": "/images/girls-in-the-orchard-03.jpg",
+        "ratio": "3:2",
+        "alt": "The gallery wall with the Polaroids hung in one long row",
+        "caption": "Installation, Galerie Hesse"
+      },
+      {
+        "image": "/images/girls-in-the-orchard-04.jpg",
+        "ratio": "1:1",
+        "alt": "Polaroid of a hand holding a bruised apple",
+        "caption": ""
+      },
+      {
+        "image": "/images/girls-in-the-orchard-05.jpg",
+        "ratio": "1:1",
+        "alt": "Polaroid of a ladder against a tree at dusk",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Photography",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Exhibition",
+        "name": "Galerie Hesse"
+      }
+    ]
+  },
+  {
+    "title": "Mother’s Wardrobe",
+    "year": 2021,
+    "discipline": "Art direction",
+    "client": "Self-published",
+    "role": "Stylist, art director, publisher",
+    "featured": false,
+    "summary": "An inventory of my mother’s clothes from 1974 to 1999, photographed flat and then worn by my sister. Self-published as a 120-page book in an edition of 200.",
+    "images": [
+      {
+        "image": "/images/mothers-wardrobe-01.jpg",
+        "ratio": "5:7",
+        "alt": "A brown corduroy skirt laid flat on white paper with a handwritten date",
+        "caption": ""
+      },
+      {
+        "image": "/images/mothers-wardrobe-02.jpg",
+        "ratio": "4:5",
+        "alt": "A young woman wearing the same corduroy skirt on a staircase",
+        "caption": ""
+      },
+      {
+        "image": "/images/mothers-wardrobe-03.jpg",
+        "ratio": "3:2",
+        "alt": "An open spread of the book showing a blouse and its receipt",
+        "caption": "Spread, pages 46–47"
+      },
+      {
+        "image": "/images/mothers-wardrobe-04.jpg",
+        "ratio": "5:7",
+        "alt": "A floral summer dress pinned to a wall",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Concept, styling and art direction",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Photography",
+        "name": "Jonas Weil"
+      },
+      {
+        "role": "Book design",
+        "name": "Paul Ardent"
+      },
+      {
+        "role": "Model",
+        "name": "Jeanne Lisle"
+      }
+    ]
+  },
+  {
+    "title": "Interiors",
+    "year": 2020,
+    "discipline": "Art direction",
+    "client": "Maison Lune",
+    "role": "Art director, prop stylist",
+    "featured": false,
+    "summary": "Autumn catalogue for Maison Lune. They wanted the house to look lived in, so we moved in for a week: unmade beds, a half-read newspaper, a coat on the wrong chair.",
+    "images": [
+      {
+        "image": "/images/interiors-01.jpg",
+        "ratio": "3:2",
+        "alt": "A bedroom with linen sheets pulled back and a cardigan on the floor",
+        "caption": ""
+      },
+      {
+        "image": "/images/interiors-02.jpg",
+        "ratio": "4:5",
+        "alt": "A ceramic jug of dried hydrangeas on a windowsill",
+        "caption": ""
+      },
+      {
+        "image": "/images/interiors-03.jpg",
+        "ratio": "16:9",
+        "alt": "A kitchen table with breakfast left out and morning sun across it",
+        "caption": ""
+      },
+      {
+        "image": "/images/interiors-04.jpg",
+        "ratio": "1:1",
+        "alt": "A wool blanket folded over the arm of a green sofa",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Art direction and props",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Photography",
+        "name": "Jonas Weil"
+      },
+      {
+        "role": "Set design",
+        "name": "Inès Calvet"
+      }
+    ]
+  },
+  {
+    "title": "Swim Season",
+    "year": 2019,
+    "discipline": "Styling",
+    "client": "Ondine Swim",
+    "role": "Stylist",
+    "featured": false,
+    "summary": "My first job under my own name: a swimwear lookbook for Ondine, shot in one day on a borrowed boat off Marseille. Towels, hats and sandals came from my own drawers.",
+    "images": [
+      {
+        "image": "/images/swim-season-01.jpg",
+        "ratio": "4:5",
+        "alt": "A woman in a red one-piece sitting on the deck of a small boat",
+        "caption": ""
+      },
+      {
+        "image": "/images/swim-season-02.jpg",
+        "ratio": "3:2",
+        "alt": "Two swimmers climbing up a ladder from dark blue water",
+        "caption": ""
+      },
+      {
+        "image": "/images/swim-season-03.jpg",
+        "ratio": "1:1",
+        "alt": "A striped towel and a straw hat drying on a rail",
+        "caption": ""
+      },
+      {
+        "image": "/images/swim-season-04.jpg",
+        "ratio": "5:7",
+        "alt": "A woman with wet hair wrapped in a white robe, squinting at the sun",
+        "caption": ""
+      }
+    ],
+    "credits": [
+      {
+        "role": "Styling",
+        "name": "Margot Lisle"
+      },
+      {
+        "role": "Photography",
+        "name": "Jonas Weil"
+      },
+      {
+        "role": "Model",
+        "name": "Lou Ferrer"
+      }
+    ]
+  }
+]
