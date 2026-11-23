@@ -1,6 +1,7 @@
 [
   {
     "title": "Commercial work",
+    "year": null,
     "category": "Creative direction",
     "subcategory": "Commercial",
     "client": "",
@@ -12,69 +13,89 @@
         "image": "/images/commercial-01.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a commercial project image 1",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/commercial-02.jpg",
         "ratio": "3:2",
         "alt": "Placeholder for a commercial project image 2",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/commercial-03.jpg",
         "ratio": "1:1",
         "alt": "Placeholder for a commercial project image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/commercial-04.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a commercial project image 4",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "slug": ""
   },
   {
     "title": "Styling work",
+    "year": 1,
     "category": "Creative direction",
     "subcategory": "Styling",
     "client": "",
-    "role": "Stylist",
+    "role": "Styling, creative direction, shot on 35mm by Lilybelle",
     "featured": true,
-    "summary": "",
+    "summary": "Felix wears distressed vintage T-shirt, handmade necklace, lurex stockings, various costume jewellery pieces.",
     "images": [
       {
-        "image": "/images/styling-01.jpg",
-        "ratio": "4:5",
-        "alt": "Placeholder for a styling project image 1",
-        "caption": ""
+        "image": "/images/1- land b_w wheelbarrow.jpg",
+        "ratio": "3:2",
+        "alt": "Felix wears distressed vintage T-shirt, handmade necklace, lurex stockings, various costume jewellery pieces.",
+        "caption": "Monroe street (2022)",
+        "vimeo": "",
+        "video": ""
       },
       {
-        "image": "/images/styling-02.jpg",
-        "ratio": "5:7",
-        "alt": "Placeholder for a styling project image 2",
-        "caption": ""
+        "image": "/images/1- port b_w chair 1 .jpeg",
+        "ratio": "2:3",
+        "alt": "Felix wears distressed vintage T-shirt, handmade necklace, lurex stockings, various costume jewellery pieces.",
+        "caption": "Monroe street (2022)",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/styling-03.jpg",
         "ratio": "3:2",
         "alt": "Placeholder for a styling project image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/styling-04.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a styling project image 4",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "slug": ""
   },
   {
     "title": "Dummy",
     "year": 2025,
     "category": "Film costuming",
+    "subcategory": "",
     "client": "",
     "role": "Costume",
     "featured": true,
@@ -84,33 +105,43 @@
         "image": "/images/dummy-01.jpg",
         "ratio": "16:9",
         "alt": "Placeholder for Dummy image 1",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/dummy-02.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for Dummy image 2",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/dummy-03.jpg",
         "ratio": "3:2",
         "alt": "Placeholder for Dummy image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/dummy-04.jpg",
         "ratio": "1:1",
         "alt": "Placeholder for Dummy image 4",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "slug": ""
   },
   {
     "title": "Syb & the Myth",
     "year": 2022,
     "category": "Film costuming",
+    "subcategory": "",
     "client": "",
     "role": "Costume",
     "featured": true,
@@ -120,33 +151,43 @@
         "image": "/images/syb-and-the-myth-01.jpg",
         "ratio": "16:9",
         "alt": "Placeholder for Syb & the Myth image 1",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/syb-and-the-myth-02.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for Syb & the Myth image 2",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/syb-and-the-myth-03.jpg",
         "ratio": "3:2",
         "alt": "Placeholder for Syb & the Myth image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/syb-and-the-myth-04.jpg",
         "ratio": "5:7",
         "alt": "Placeholder for Syb & the Myth image 4",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "slug": ""
   },
   {
     "title": "Thea Goes to Town",
     "year": 2021,
     "category": "Film costuming",
+    "subcategory": "",
     "client": "",
     "role": "Costume",
     "featured": true,
@@ -156,32 +197,43 @@
         "image": "/images/thea-goes-to-town-01.jpg",
         "ratio": "16:9",
         "alt": "Placeholder for Thea Goes to Town image 1",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/thea-goes-to-town-02.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for Thea Goes to Town image 2",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/thea-goes-to-town-03.jpg",
         "ratio": "1:1",
         "alt": "Placeholder for Thea Goes to Town image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/thea-goes-to-town-04.jpg",
         "ratio": "3:2",
         "alt": "Placeholder for Thea Goes to Town image 4",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
-    "credits": []
+    "credits": [],
+    "slug": ""
   },
   {
     "title": "Collage series one",
+    "year": null,
     "category": "Visual art",
+    "subcategory": "Collage",
     "client": "",
     "role": "",
     "featured": true,
@@ -191,33 +243,43 @@
         "image": "/images/collage-01.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a collage image 1",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/collage-02.jpg",
         "ratio": "1:1",
         "alt": "Placeholder for a collage image 2",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/collage-03.jpg",
         "ratio": "5:7",
         "alt": "Placeholder for a collage image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/collage-04.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a collage image 4",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
     "credits": [],
-    "subcategory": "Collage"
+    "slug": ""
   },
   {
     "title": "Photography series",
+    "year": null,
     "category": "Visual art",
+    "subcategory": "Photography",
     "client": "",
     "role": "",
     "featured": false,
@@ -227,33 +289,43 @@
         "image": "/images/photography-01.jpg",
         "ratio": "3:2",
         "alt": "Placeholder for a photograph image 1",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/photography-02.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a photograph image 2",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/photography-03.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a photograph image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/photography-04.jpg",
         "ratio": "3:2",
         "alt": "Placeholder for a photograph image 4",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
     "credits": [],
-    "subcategory": "Photography"
+    "slug": ""
   },
   {
     "title": "Sculpture series",
+    "year": null,
     "category": "Visual art",
+    "subcategory": "Sculpture",
     "client": "",
     "role": "",
     "featured": false,
@@ -263,27 +335,35 @@
         "image": "/images/sculpture-01.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a sculpture image 1",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/sculpture-02.jpg",
         "ratio": "1:1",
         "alt": "Placeholder for a sculpture image 2",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/sculpture-03.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a sculpture image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
     "credits": [],
-    "subcategory": "Sculpture"
+    "slug": ""
   },
   {
     "title": "Painting series",
+    "year": null,
     "category": "Visual art",
+    "subcategory": "Paintings",
     "client": "",
     "role": "",
     "featured": false,
@@ -293,22 +373,28 @@
         "image": "/images/paintings-01.jpg",
         "ratio": "5:7",
         "alt": "Placeholder for a painting image 1",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/paintings-02.jpg",
         "ratio": "4:5",
         "alt": "Placeholder for a painting image 2",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       },
       {
         "image": "/images/paintings-03.jpg",
         "ratio": "1:1",
         "alt": "Placeholder for a painting image 3",
-        "caption": ""
+        "caption": "",
+        "vimeo": "",
+        "video": ""
       }
     ],
     "credits": [],
-    "subcategory": "Paintings"
+    "slug": ""
   }
 ]
